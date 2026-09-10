@@ -91,7 +91,7 @@
     font-variant-numeric: tabular-nums;
   }
   .stats .new strong {
-    color: var(--stain-deep);
+    color: var(--accent-deep);
   }
   .buttons {
     display: flex;
@@ -105,39 +105,39 @@
   }
   .primary {
     border: 0;
-    background: var(--stain);
+    background: var(--accent);
     color: #fff;
     font-weight: 600;
   }
   .primary:hover {
-    background: var(--stain-deep);
+    background: var(--accent-deep);
   }
   .ghost {
     border: 1px solid var(--rule);
     background: transparent;
   }
   .ghost:hover {
-    border-color: var(--stain);
-    color: var(--stain-deep);
+    border-color: var(--accent);
+    color: var(--accent-deep);
   }
   .done {
     padding: 0.5rem 0.85rem;
-    border-left: 3px solid var(--moss);
+    border-left: 3px solid var(--good);
     border-radius: 0 var(--radius) var(--radius) 0;
-    background: var(--moss-tint);
-    color: var(--moss);
+    background: var(--good-tint);
+    color: var(--good);
     font-size: 0.9rem;
   }
   .conflicts {
     padding: 0.7rem 0.9rem;
-    border-left: 3px solid var(--safranin);
+    border-left: 3px solid var(--warn);
     border-radius: 0 var(--radius) var(--radius) 0;
-    background: var(--safranin-tint);
+    background: var(--warn-tint);
     font-size: 0.9rem;
   }
   .conflicts summary {
     cursor: pointer;
-    color: var(--safranin);
+    color: var(--warn);
     font-weight: 600;
   }
   .conflicts ul {

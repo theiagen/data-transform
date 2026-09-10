@@ -182,15 +182,15 @@
     font-variant-numeric: tabular-nums;
   }
   .step.active::before {
-    background: var(--stain);
-    border-color: var(--stain);
+    background: var(--accent);
+    border-color: var(--accent);
     color: #fff;
   }
   .step.done::before {
     content: '✓';
-    background: var(--stain-tint);
-    border-color: var(--stain-tint-strong);
-    color: var(--stain-deep);
+    background: var(--accent-tint);
+    border-color: var(--accent-tint-strong);
+    color: var(--accent-deep);
   }
   .step.pending {
     color: var(--ink-mute);
@@ -219,7 +219,7 @@
     padding: 0;
     border: 0;
     background: none;
-    color: var(--stain);
+    color: var(--accent);
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 3px;

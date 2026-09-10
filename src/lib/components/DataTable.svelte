@@ -77,16 +77,16 @@
     z-index: 1;
   }
   th.new {
-    background: var(--stain-tint-strong);
-    color: var(--stain-deep);
+    background: var(--accent-tint-strong);
+    color: var(--accent-deep);
   }
   td.new {
-    background: var(--stain-tint);
+    background: var(--accent-tint);
     color: var(--ink-mute);
     text-align: center;
   }
   td.present {
-    background: var(--stain);
+    background: var(--good);
     color: #fff;
     font-weight: 600;
   }
@@ -109,6 +109,6 @@
     cursor: pointer;
   }
   .more:hover {
-    border-color: var(--stain);
+    border-color: var(--accent);
   }
 </style>

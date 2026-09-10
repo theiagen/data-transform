@@ -70,9 +70,9 @@
   }
   .drop:hover,
   .drop.dragging {
-    border-color: var(--stain);
-    background: var(--stain-tint);
-    color: var(--stain-deep);
+    border-color: var(--accent);
+    background: var(--accent-tint);
+    color: var(--accent-deep);
   }
   .glyph {
     width: 44px;
@@ -89,9 +89,9 @@
   .error {
     margin-top: 0.75rem;
     padding: 0.6rem 0.85rem;
-    border-left: 3px solid var(--safranin);
-    background: var(--safranin-tint);
-    color: var(--safranin);
+    border-left: 3px solid var(--warn);
+    background: var(--warn-tint);
+    color: var(--warn);
     border-radius: 0 var(--radius) var(--radius) 0;
   }
 </style>

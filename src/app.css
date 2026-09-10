@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;600&display=swap');
 
 :root {
-  --paper: #f7f6f3;
-  --paper-deep: #efedea;
-  --ink: #1f1b2e;
-  --ink-soft: #55506a;
-  --ink-mute: #8b869c;
-  --rule: #d9d5e0;
-  --stain: #5a2ca0;
-  --stain-deep: #43207a;
-  --stain-tint: #ebe4f7;
-  --stain-tint-strong: #d7c9f0;
-  --safranin: #b93a26;
-  --safranin-tint: #fbe8e3;
-  --moss: #2f6b4f;
-  --moss-tint: #e2efe7;
+  --paper: #f6f8fa;
+  --paper-deep: #eaf0f5;
+  --ink: #1d2933;
+  --ink-soft: #4f5f6d;
+  --ink-mute: #84929e;
+  --rule: #d3dce4;
+  --accent: #116eb7;
+  --accent-deep: #0c5290;
+  --accent-tint: #e5f2fb;
+  --accent-tint-strong: #c6def2;
+  --good: #1da74a;
+  --good-deep: #157c37;
+  --good-tint: #e3f6ea;
+  --warn: #c0392b;
+  --warn-tint: #fbe9e6;
   --font-ui: 'Instrument Sans', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
   --font-data: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
   --radius: 6px;
@@ -52,7 +53,7 @@ select {
 }
 
 :focus-visible {
-  outline: 2px solid var(--stain);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 

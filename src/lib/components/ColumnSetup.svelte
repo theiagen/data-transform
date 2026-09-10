@@ -277,7 +277,7 @@
   }
   select:focus,
   input:focus {
-    border-color: var(--stain);
+    border-color: var(--accent);
   }
   .inline {
     display: flex;
@@ -318,19 +318,19 @@
     margin-left: 0.4rem;
   }
   .attention {
-    color: var(--stain-deep);
+    color: var(--accent-deep);
   }
   .badge {
     padding: 0.1rem 0.5rem;
     border-radius: 999px;
-    background: var(--safranin-tint);
-    color: var(--safranin);
+    background: var(--warn-tint);
+    color: var(--warn);
     font-size: 0.8rem;
     font-weight: 600;
   }
   input[type='checkbox'],
   input[type='radio'] {
-    accent-color: var(--stain);
+    accent-color: var(--accent);
     width: 1rem;
     height: 1rem;
   }
@@ -367,7 +367,7 @@
     padding: 0;
     border: 0;
     background: none;
-    color: var(--stain);
+    color: var(--accent);
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -410,7 +410,7 @@
     inset: 0 auto 0 0;
     width: var(--w);
     border-radius: 4px;
-    background: var(--stain-tint);
+    background: var(--accent-tint);
     z-index: -1;
   }
 
@@ -446,13 +446,13 @@
     min-width: 4ch;
     border-radius: 4px;
     overflow: hidden;
-    border: 1px solid #3a3452;
+    border: 1px solid #2e4256;
     font-family: var(--font-data);
     font-size: 0.8rem;
   }
   .cell-head {
     padding: 0.2rem 0.55rem;
-    background: #2c2740;
+    background: #1c2a38;
     color: var(--ink-mute);
     max-width: 22ch;
     overflow: hidden;
@@ -471,14 +471,14 @@
     text-align: left;
   }
   .cell.present {
-    border-color: var(--stain);
+    border-color: var(--good);
   }
   .cell.present .cell-head {
-    background: var(--stain-deep);
-    color: var(--stain-tint);
+    background: var(--good-deep);
+    color: var(--good-tint);
   }
   .cell.present .cell-body {
-    background: var(--stain);
+    background: var(--good);
     color: #fff;
     font-weight: 600;
   }
@@ -489,10 +489,10 @@
 
   .notice {
     padding: 0.6rem 0.85rem;
-    border-left: 3px solid var(--safranin);
+    border-left: 3px solid var(--warn);
     border-radius: 0 var(--radius) var(--radius) 0;
-    background: var(--safranin-tint);
-    color: var(--safranin);
+    background: var(--warn-tint);
+    color: var(--warn);
     font-size: 0.9rem;
   }
   .actions {
@@ -503,13 +503,13 @@
     padding: 0.75rem 1.4rem;
     border: 0;
     border-radius: var(--radius);
-    background: var(--stain);
+    background: var(--accent);
     color: #fff;
     font-weight: 600;
     cursor: pointer;
   }
   .primary:hover:not(:disabled) {
-    background: var(--stain-deep);
+    background: var(--accent-deep);
   }
   .primary:disabled {
     background: var(--rule);
