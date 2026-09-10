@@ -1,5 +1,6 @@
 <script lang="ts">
   import theiagenLogo from './assets/theiagen-logo.svg';
+  import exampleCsv from '../samples/example_amr_genes.csv?raw';
   import ColumnSetup from './lib/components/ColumnSetup.svelte';
   import FileDrop from './lib/components/FileDrop.svelte';
   import ResultView from './lib/components/ResultView.svelte';
@@ -57,6 +58,10 @@
     }
   }
 
+  function loadExample() {
+    loadFile(new File([exampleCsv], 'example_amr_genes.csv', { type: 'text/csv' }));
+  }
+
   function run() {
     if (!parsed) return;
     result = transform(parsed.table, options);
@@ -102,7 +107,10 @@
       </div>
       {#if stage === 'load'}
         <FileDrop onfile={loadFile} error={loadError} />
-        <p class="aside">Works with CSV and TSV exports from Excel, LIMS systems, and typing tools. The first row must contain column names.</p>
+        <div class="aside">
+          <p>Works with CSV and TSV exports from Excel, LIMS systems, and typing tools. The first row must contain column names.</p>
+          <button type="button" class="example" onclick={loadExample}>Load an example file</button>
+        </div>
       {/if}
     </li>
 
@@ -252,10 +260,32 @@
     text-underline-offset: 3px;
   }
   .aside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
     margin-top: 0.9rem;
     color: var(--ink-soft);
     font-size: 0.9rem;
+  }
+  .aside p {
     max-width: var(--measure);
+  }
+  .example {
+    flex: none;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--accent-tint-strong);
+    border-radius: var(--radius);
+    background: var(--accent-tint);
+    color: var(--accent-deep);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .example:hover {
+    border-color: var(--accent);
+    background: var(--accent-tint-strong);
   }
   footer {
     margin-top: 3rem;
