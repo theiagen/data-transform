@@ -1,4 +1,5 @@
 <script lang="ts">
+  import theiagenLogo from './assets/theiagen-logo.svg';
   import ColumnSetup from './lib/components/ColumnSetup.svelte';
   import FileDrop from './lib/components/FileDrop.svelte';
   import ResultView from './lib/components/ResultView.svelte';
@@ -78,7 +79,7 @@
   <header>
     <div class="masthead">
       <a class="brand" href="https://theiagen.com/" target="_blank" rel="noopener">
-        <img src="/theiagen-logo.svg" alt="Theiagen Genomics" width="1026" height="253" />
+        <img src={theiagenLogo} alt="Theiagen Genomics" width="1026" height="253" />
       </a>
       <h1>Data Transform</h1>
     </div>
@@ -136,7 +137,7 @@
       Large files are fine. There is no upload, no server, and nothing is stored after you close the tab.
     </p>
     <p class="copyright">
-      <img src="/theiagen-logo.svg" alt="" width="1026" height="253" />
+      <img src={theiagenLogo} alt="" width="1026" height="253" />
       <span>Theiagen Genomics © {year}. All Rights Reserved.</span>
     </p>
   </footer>
