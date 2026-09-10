@@ -76,10 +76,12 @@
 
 <main>
   <header>
-    <a class="brand" href="https://theiagen.com/" target="_blank" rel="noopener">
-      <img src="/theiagen-logo.svg" alt="Theiagen Genomics" width="1026" height="253" />
-    </a>
-    <h1>Data Transform</h1>
+    <div class="masthead">
+      <a class="brand" href="https://theiagen.com/" target="_blank" rel="noopener">
+        <img src="/theiagen-logo.svg" alt="Theiagen Genomics" width="1026" height="253" />
+      </a>
+      <h1>Data Transform</h1>
+    </div>
     <p class="tagline">
       Turn a column that lists several values per sample, such as AMR genes, into one column per value marked present or absent.
       Everything runs in your browser. The file never leaves your computer.
@@ -150,9 +152,15 @@
     max-width: var(--measure);
     margin-bottom: 2.5rem;
   }
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+  }
   .brand {
-    display: inline-block;
-    margin-bottom: 1.5rem;
+    display: block;
+    flex: none;
   }
   .brand img {
     display: block;
@@ -160,11 +168,12 @@
     height: 3rem;
   }
   h1 {
-    font-size: 2.1rem;
+    font-size: 2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.1;
-    margin-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    border-left: 1.5px solid var(--rule);
   }
   .tagline {
     color: var(--ink-soft);
@@ -274,8 +283,15 @@
     .step {
       padding-left: 2.6rem;
     }
+    .masthead {
+      gap: 0.9rem;
+    }
+    .brand img {
+      height: 2.25rem;
+    }
     h1 {
-      font-size: 1.7rem;
+      font-size: 1.45rem;
+      padding-left: 0.9rem;
     }
   }
 </style>
