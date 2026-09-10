@@ -1,5 +1,7 @@
 # Data Transform
 
+https://theiagen.github.io/data-transform/
+
 Turn a spreadsheet column that lists several values per sample, such as AMR genes, into one column per value marked present or absent. Runs entirely in the browser. The file never leaves your computer.
 
 ## What it does
@@ -45,7 +47,9 @@ Then open the printed local URL. Try `samples/example_amr_genes.csv`.
 npm run build
 ```
 
-The `dist/` folder is a static site. Serve it from any web server or open it from a local folder. No backend is needed.
+The `dist/` folder is a static site with relative asset paths, so it can be served from any web server or sub-path, or opened from a local folder. No backend is needed.
+
+Every push to `main` is built and published to GitHub Pages at https://theiagen.github.io/data-transform/ by the workflow in `.github/workflows/deploy.yml`.
 
 ## Develop
 
@@ -53,3 +57,9 @@ The `dist/` folder is a static site. Serve it from any web server or open it fro
 npm test          # unit tests for the parsing and transform logic
 npm run check     # type-check Svelte and TypeScript
 ```
+
+## License
+
+GPL-3.0-or-later. See `LICENSE`.
+
+Copyright Theiagen Genomics.
