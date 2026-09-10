@@ -70,11 +70,15 @@
     loadError = '';
   }
 
+  const year = new Date().getFullYear();
   const delimiterName = $derived(parsed?.delimiter === '\t' ? 'tab-separated' : parsed?.delimiter === ';' ? 'semicolon-separated' : 'comma-separated');
 </script>
 
 <main>
   <header>
+    <a class="brand" href="https://theiagen.com/" target="_blank" rel="noopener">
+      <img src="/theiagen-logo.svg" alt="Theiagen Genomics" width="1026" height="253" />
+    </a>
     <h1>Data Transform</h1>
     <p class="tagline">
       Turn a column that lists several values per sample, such as AMR genes, into one column per value marked present or absent.
@@ -129,6 +133,10 @@
       Values are split on the separator, trimmed, and de-duplicated within a cell. Every other column is copied through unchanged.
       Large files are fine. There is no upload, no server, and nothing is stored after you close the tab.
     </p>
+    <p class="copyright">
+      <img src="/theiagen-logo.svg" alt="" width="1026" height="253" />
+      <span>Theiagen Genomics © {year}. All Rights Reserved.</span>
+    </p>
   </footer>
 </main>
 
@@ -141,6 +149,15 @@
   header {
     max-width: var(--measure);
     margin-bottom: 2.5rem;
+  }
+  .brand {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+  .brand img {
+    display: block;
+    width: auto;
+    height: 3rem;
   }
   h1 {
     font-size: 2.1rem;
@@ -237,6 +254,18 @@
     color: var(--ink-mute);
     font-size: 0.85rem;
     max-width: var(--measure);
+  }
+  .copyright {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .copyright img {
+    width: auto;
+    height: 1.6rem;
+    opacity: 0.85;
   }
   @media (max-width: 600px) {
     main {
