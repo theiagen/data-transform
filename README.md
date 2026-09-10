@@ -1,4 +1,4 @@
-# Presence Pivot
+# Data Transform
 
 Turn a spreadsheet column that lists several values per sample, such as AMR genes, into one column per value marked present or absent. Runs entirely in the browser. The file never leaves your computer.
 

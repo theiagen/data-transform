@@ -75,7 +75,7 @@
 
 <main>
   <header>
-    <h1>Presence Pivot</h1>
+    <h1>Data Transform</h1>
     <p class="tagline">
       Turn a column that lists several values per sample, such as AMR genes, into one column per value marked present or absent.
       Everything runs in your browser. The file never leaves your computer.
