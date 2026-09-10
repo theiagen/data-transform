@@ -1,0 +1,13 @@
+Sample_ID,Species,ST,AMR_genes,Collection_Date,Site
+S001,Klebsiella pneumoniae,ST258,blaKPC-2; blaSHV-11; blaTEM-1; aac(6')-Ib,2024-01-12,Hospital A
+S002,Klebsiella pneumoniae,ST258,blaKPC-3; blaSHV-11; oqxA; oqxB,2024-01-15,Hospital A
+S003,Escherichia coli,ST131,blaCTX-M-15; blaOXA-1; aac(6')-Ib-cr; tet(A),2024-02-02,Hospital B
+S004,Escherichia coli,ST131,blaCTX-M-15; sul1; dfrA17,2024-02-08,Hospital B
+S005,Acinetobacter baumannii,ST2,blaOXA-23; blaOXA-66; armA; sul2,2024-02-20,Hospital A
+S006,Acinetobacter baumannii,ST2,blaOXA-72; blaOXA-66,2024-03-01,Hospital C
+S007,Pseudomonas aeruginosa,ST235,blaVIM-2; aac(6')-Ib; sul1,2024-03-11,Hospital C
+S008,Klebsiella pneumoniae,ST11,blaNDM-1; blaCTX-M-15; blaSHV-11; rmtB,2024-03-19,Hospital B
+S009,Escherichia coli,ST69,,2024-04-02,Hospital A
+S010,Klebsiella pneumoniae,ST258,"blaKPC-2; blaSHV-11; tet(A)",2024-04-10,Hospital A
+S010,Klebsiella pneumoniae,ST258,blaKPC-2; oqxA,2024-04-10,Hospital D
+S011,Enterobacter cloacae,ST114,blaACT-7; blaNDM-1; fosA,2024-04-22,Hospital C
