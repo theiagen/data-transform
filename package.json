@@ -1,7 +1,14 @@
 {
   "name": "data-transform",
+  "version": "0.1.0",
+  "description": "Turn a multi-value column in a CSV/TSV into presence/absence columns, entirely in the browser.",
   "private": true,
-  "version": "0.0.0",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://theiagen.github.io/data-transform/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theiagen/data-transform.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +16,9 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
     "test": "vitest run"
+  },
+  "dependencies": {
+    "papaparse": "^5.7.0"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
@@ -21,9 +31,6 @@
     "typescript": "~6.0.2",
     "vite": "^8.3.0",
     "vitest": "^4.1.11"
-  },
-  "dependencies": {
-    "papaparse": "^5.7.0"
   },
   "optionalDependencies": {
     "@rolldown/binding-darwin-arm64": "^1.2.8"
