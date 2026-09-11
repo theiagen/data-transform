@@ -39,7 +39,8 @@ npm install
 npm run dev
 ```
 
-Then open the printed local URL. Try `samples/example_amr_genes.csv`.
+Then open the printed local URL. Try `samples/example_amr_genes.csv`, or press "Load an example file" in the app. Sample `S010`
+appears twice in it, so you can try merging duplicates and combining the values that differ.
 
 ## Build and deploy
 
