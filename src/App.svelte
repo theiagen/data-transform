@@ -25,7 +25,7 @@
       valueColumn: 1,
       separator: ';',
       format: 'binary',
-      keepOriginal: false,
+      keepOriginal: true,
       mergeDuplicates: false,
       mergeConflicts: 'first',
       columnPrefix: '',

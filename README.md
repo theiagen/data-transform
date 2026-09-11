@@ -40,8 +40,7 @@ npm run dev
 ```
 
 Then open the printed local URL. Try `samples/example_amr_genes.csv`, or press "Load an example file" in the app. Sample `S010`
-appears on two rows with one gene each, the way some typing tools export. Tick "Keep the original
-column" and "Merge rows" to get one row with both genes marked present and `blaOXA-23; blaOXA-72`
+appears on two rows with one gene each, the way some typing tools export. Tick "Merge rows" to get one row with both genes marked present and `blaOXA-23; blaOXA-72`
 in the original column.
 
 ## Build and deploy
