@@ -6,8 +6,8 @@ describe('detectSeparator', () => {
     expect(detectSeparator(['a;b', 'c;d;e', 'f'])).toBe(';');
     expect(detectSeparator(['a|b', 'c, d|e', 'f|g'])).toBe('|');
   });
-  it('falls back to semicolon when nothing splits', () => {
-    expect(detectSeparator(['a', 'b', ''])).toBe(';');
+  it('falls back to comma when nothing splits', () => {
+    expect(detectSeparator(['a', 'b', ''])).toBe(',');
   });
   it('exposes the candidates in a stable order', () => {
     expect(SEPARATOR_CHOICES.map((c) => c.value)).toEqual([';', ',', '|', '/', ' ']);

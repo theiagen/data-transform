@@ -11,7 +11,7 @@ export const SEPARATOR_CHOICES: readonly SeparatorChoice[] = [
   { value: ' ', label: 'Whitespace' },
 ];
 
-const FALLBACK = ';';
+const FALLBACK = ',';
 
 export function detectSeparator(cells: readonly string[]): string {
   let best = FALLBACK;
