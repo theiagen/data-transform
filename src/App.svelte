@@ -149,6 +149,10 @@
       <img src={theiagenLogo} alt="" width="1026" height="253" />
       <span>Theiagen Genomics © {year}. All Rights Reserved.</span>
     </p>
+    <p class="build">
+      Built {__BUILD_DATE__} from commit
+      <a href="https://github.com/theiagen/data-transform/commit/{__COMMIT__}" target="_blank" rel="noopener">{__COMMIT__}</a>
+    </p>
   </footer>
 </main>
 
@@ -307,6 +311,14 @@
     width: auto;
     height: 1.6rem;
     opacity: 0.85;
+  }
+  .build {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .build a {
+    color: inherit;
+    font-family: var(--font-data);
   }
   @media (max-width: 600px) {
     main {
