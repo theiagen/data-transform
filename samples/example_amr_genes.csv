@@ -8,6 +8,6 @@ S006,Acinetobacter baumannii,ST2,blaOXA-72; blaOXA-66,Carbapenem,2024-03-01,Hosp
 S007,Pseudomonas aeruginosa,ST235,blaVIM-2; aac(6')-Ib; sul1,Carbapenem; Aminoglycoside,2024-03-11,Hospital C
 S008,Klebsiella pneumoniae,ST11,blaNDM-1; blaCTX-M-15; blaSHV-11; rmtB,Carbapenem; Aminoglycoside,2024-03-19,Hospital B
 S009,Escherichia coli,ST69,,,2024-04-02,Hospital A
-S010,Klebsiella pneumoniae,ST258,"blaKPC-2; blaSHV-11; tet(A)",Carbapenem; Tetracycline,2024-04-10,Hospital A
-S010,Klebsiella pneumoniae,ST258,blaKPC-2; oqxA,Carbapenem; Fluoroquinolone,2024-04-10,Hospital D
+S010,Acinetobacter baumannii,ST2,blaOXA-23,Carbapenem,2024-04-10,Hospital A
+S010,Acinetobacter baumannii,ST2,blaOXA-72,Carbapenem,2024-04-10,Hospital A
 S011,Enterobacter cloacae,ST114,blaACT-7; blaNDM-1; fosA,Carbapenem; Fosfomycin,2024-04-22,Hospital C
