@@ -19,6 +19,7 @@ const base: TransformOptions = {
   format: 'binary',
   keepOriginal: false,
   mergeDuplicates: false,
+  mergeConflicts: 'first',
   columnPrefix: '',
   order: 'alpha',
   excludedValues: new Set(),
@@ -98,6 +99,31 @@ describe('transform', () => {
     expect(result.table.rows[0]).toEqual(['S1', 'Lab A', '1', '0', '1']);
     expect(result.mergedIds).toBe(1);
     expect(result.conflicts).toEqual([{ id: 'S1', column: 'site', values: ['Lab A', 'Lab B'] }]);
+  });
+
+  it('combines disagreeing values into one cell when asked', () => {
+    const duplicated: Table = {
+      headers: ['id', 'resistance', 'genes'],
+      rows: [
+        ['S1', 'OXA-23', 'OXA-23'],
+        ['S1', 'OXA-72', 'OXA-72'],
+        ['S1', 'OXA-23', ''],
+      ],
+    };
+    const result = transform(duplicated, { ...base, valueColumn: 2, separator: ',', mergeDuplicates: true, mergeConflicts: 'combine' });
+    expect(result.table.rows).toEqual([['S1', 'OXA-23, OXA-72', '1', '1']]);
+    expect(result.conflicts).toEqual([{ id: 'S1', column: 'resistance', values: ['OXA-23', 'OXA-72'] }]);
+  });
+
+  it('rebuilds a kept original column from every merged value', () => {
+    const duplicated: Table = {
+      headers: ['id', 'genes'],
+      rows: [['S1', 'a b'], ['S1', 'c']],
+    };
+    const first = transform(duplicated, { ...base, valueColumn: 1, separator: ' ', keepOriginal: true, mergeDuplicates: true });
+    expect(first.table.rows[0][1]).toBe('a b');
+    const combined = transform(duplicated, { ...base, valueColumn: 1, separator: ' ', keepOriginal: true, mergeDuplicates: true, mergeConflicts: 'combine' });
+    expect(combined.table.rows[0][1]).toBe('a b c');
   });
 
   it('leaves duplicate ids alone when merging is off', () => {

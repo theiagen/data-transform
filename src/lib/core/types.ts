@@ -7,6 +7,8 @@ export type PresenceFormat = 'binary' | 'boolean' | 'yesno';
 
 export type ColumnOrder = 'alpha' | 'appearance' | 'frequency';
 
+export type MergeConflictPolicy = 'first' | 'combine';
+
 export interface TransformOptions {
   primaryColumn: number;
   valueColumn: number;
@@ -14,6 +16,7 @@ export interface TransformOptions {
   format: PresenceFormat;
   keepOriginal: boolean;
   mergeDuplicates: boolean;
+  mergeConflicts: MergeConflictPolicy;
   columnPrefix: string;
   order: ColumnOrder;
   excludedValues: ReadonlySet<string>;

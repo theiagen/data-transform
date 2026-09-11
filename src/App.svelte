@@ -27,6 +27,7 @@
       format: 'binary',
       keepOriginal: false,
       mergeDuplicates: false,
+      mergeConflicts: 'first',
       columnPrefix: '',
       order: 'alpha',
       excludedValues: new Set(),
@@ -134,7 +135,7 @@
         <h2>Check and download</h2>
       </div>
       {#if stage === 'result' && result && parsed}
-        <ResultView {result} {fileName} primaryHeader={parsed.table.headers[options.primaryColumn]} format={options.format} onedit={() => (stage = 'setup')} onreset={reset} />
+        <ResultView {result} {fileName} primaryHeader={parsed.table.headers[options.primaryColumn]} format={options.format} mergeConflicts={options.mergeConflicts} onedit={() => (stage = 'setup')} onreset={reset} />
       {/if}
     </li>
   </ol>

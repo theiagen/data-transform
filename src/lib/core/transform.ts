@@ -53,6 +53,11 @@ interface RowGroup {
   conflicts: Map<number, Set<string>>;
 }
 
+export function joinValues(values: Iterable<string>, separator: string): string {
+  const joiner = separator.trim() === '' ? separator : `${separator} `;
+  return [...values].join(joiner);
+}
+
 function groupByPrimary(table: Table, options: TransformOptions): Map<string, RowGroup> {
   const groups = new Map<string, RowGroup>();
   for (const row of table.rows) {
@@ -79,7 +84,18 @@ function groupByPrimary(table: Table, options: TransformOptions): Map<string, Ro
       }
     });
   }
+  if (options.mergeConflicts === 'combine') combineConflicts(groups, options);
   return groups;
+}
+
+function combineConflicts(groups: Map<string, RowGroup>, options: TransformOptions): void {
+  for (const group of groups.values()) {
+    if (group.rowCount < 2) continue;
+    group.cells[options.valueColumn] = joinValues(group.values, options.separator);
+    for (const [index, values] of group.conflicts) {
+      group.cells[index] = joinValues(values, options.separator);
+    }
+  }
 }
 
 interface SourceRows {

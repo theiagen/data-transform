@@ -1,6 +1,6 @@
 <script lang="ts">
   import { serializeCsv } from '../core/parse';
-  import type { PresenceFormat, TransformResult } from '../core/types';
+  import type { MergeConflictPolicy, PresenceFormat, TransformResult } from '../core/types';
   import DataTable from './DataTable.svelte';
 
   interface Props {
@@ -8,11 +8,12 @@
     fileName: string;
     primaryHeader: string;
     format: PresenceFormat;
+    mergeConflicts: MergeConflictPolicy;
     onedit: () => void;
     onreset: () => void;
   }
 
-  let { result, fileName, primaryHeader, format, onedit, onreset }: Props = $props();
+  let { result, fileName, primaryHeader, format, mergeConflicts, onedit, onreset }: Props = $props();
 
   const PRESENT: Record<PresenceFormat, string> = { binary: '1', boolean: 'true', yesno: 'yes' };
   const highlight = $derived(new Set(result.newColumns));
@@ -55,7 +56,7 @@
   {#if result.conflicts.length > 0}
     <details class="conflicts">
       <summary>
-        {result.conflicts.length} merged {result.conflicts.length === 1 ? 'cell' : 'cells'} had different values across rows. The first non-empty one was kept.
+        {result.conflicts.length} merged {result.conflicts.length === 1 ? 'cell' : 'cells'} had different values across rows. {mergeConflicts === 'combine' ? 'They were combined into one cell.' : 'The first non-empty one was kept.'}
       </summary>
       <ul>
         {#each result.conflicts.slice(0, 100) as conflict (conflict.id + conflict.column)}

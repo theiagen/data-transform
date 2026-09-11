@@ -1,7 +1,7 @@
 <script lang="ts">
   import { duplicateIdCount } from '../core/guess';
   import { detectSeparator, SEPARATOR_CHOICES } from '../core/separator';
-  import { collectValues, orderValues, splitCell } from '../core/transform';
+  import { collectValues, joinValues, orderValues, splitCell } from '../core/transform';
   import type { PresenceFormat, Table, TransformOptions } from '../core/types';
 
   interface Props {
@@ -31,6 +31,7 @@
   const selectedCount = $derived(allValues.filter((v) => !options.excludedValues.has(v)).length);
   const shownValues = $derived(filter ? allValues.filter((v) => v.toLowerCase().includes(filter.toLowerCase())) : allValues);
   const duplicates = $derived(duplicateIdCount(table, options.primaryColumn));
+  const joiner = $derived(joinValues(['', ''], options.separator));
   const cellsWithValues = $derived(table.rows.filter((row) => splitCell(row[options.valueColumn] ?? '', options.separator).length > 0).length);
   const sameColumn = $derived(options.primaryColumn === options.valueColumn);
   const canRun = $derived(!sameColumn && selectedCount > 0 && options.separator !== '');
@@ -201,7 +202,19 @@
       </span>
     </label>
     {#if duplicates > 0 && options.mergeDuplicates}
-      <p class="help indent">Merged rows keep every value listed on any of them. Other columns take the first non-empty entry, and you will be told if they disagreed.</p>
+      <fieldset class="indent">
+        <legend class="help">Merged rows keep every value listed on any of them. When their other columns disagree:</legend>
+        <div class="radios">
+          <label class="radio">
+            <input type="radio" name="mergeConflicts" value="first" bind:group={options.mergeConflicts} />
+            <span>Keep the first value</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="mergeConflicts" value="combine" bind:group={options.mergeConflicts} />
+            <span>Combine them, as in <code>OXA-23{joiner}OXA-72</code></span>
+          </label>
+        </div>
+      </fieldset>
     {/if}
   </div>
 
@@ -265,6 +278,15 @@
   }
   .indent {
     margin-left: 1.6rem;
+  }
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  legend {
+    padding: 0;
+    margin-bottom: 0.25rem;
   }
   select,
   input[type='text'],
