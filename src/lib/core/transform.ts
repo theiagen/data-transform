@@ -93,7 +93,8 @@ function combineConflicts(groups: Map<string, RowGroup>, options: TransformOptio
     if (group.rowCount < 2) continue;
     group.cells[options.valueColumn] = joinValues(group.values, options.separator);
     for (const [index, values] of group.conflicts) {
-      group.cells[index] = joinValues(values, options.separator);
+      const items = new Set([...values].flatMap((value) => splitCell(value, options.separator)));
+      group.cells[index] = joinValues(items, options.separator);
     }
   }
 }

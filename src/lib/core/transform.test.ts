@@ -115,6 +115,18 @@ describe('transform', () => {
     expect(result.conflicts).toEqual([{ id: 'S1', column: 'resistance', values: ['OXA-23', 'OXA-72'] }]);
   });
 
+  it('de-duplicates list items when combining cells that are themselves lists', () => {
+    const duplicated: Table = {
+      headers: ['id', 'resistance', 'genes'],
+      rows: [
+        ['S1', 'Carbapenem; Tetracycline', 'a'],
+        ['S1', 'Carbapenem; Fluoroquinolone', 'b'],
+      ],
+    };
+    const result = transform(duplicated, { ...base, valueColumn: 2, mergeDuplicates: true, mergeConflicts: 'combine' });
+    expect(result.table.rows[0][1]).toBe('Carbapenem; Tetracycline; Fluoroquinolone');
+  });
+
   it('rebuilds a kept original column from every merged value', () => {
     const duplicated: Table = {
       headers: ['id', 'genes'],
