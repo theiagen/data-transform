@@ -127,13 +127,13 @@ describe('transform', () => {
     expect(result.table.rows[0][1]).toBe('Carbapenem; Tetracycline; Fluoroquinolone');
   });
 
-  it('rebuilds a kept original column from every merged value', () => {
+  it('lists every merged value in a kept original column', () => {
     const duplicated: Table = {
       headers: ['id', 'genes'],
       rows: [['S1', 'a b'], ['S1', 'c']],
     };
     const first = transform(duplicated, { ...base, valueColumn: 1, separator: ' ', keepOriginal: true, mergeDuplicates: true });
-    expect(first.table.rows[0][1]).toBe('a b');
+    expect(first.table.rows[0][1]).toBe('a b c');
     const combined = transform(duplicated, { ...base, valueColumn: 1, separator: ' ', keepOriginal: true, mergeDuplicates: true, mergeConflicts: 'combine' });
     expect(combined.table.rows[0][1]).toBe('a b c');
   });

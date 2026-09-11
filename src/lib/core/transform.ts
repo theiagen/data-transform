@@ -84,6 +84,9 @@ function groupByPrimary(table: Table, options: TransformOptions): Map<string, Ro
       }
     });
   }
+  for (const group of groups.values()) {
+    if (group.rowCount > 1) group.cells[options.valueColumn] = joinValues(group.values, options.separator);
+  }
   if (options.mergeConflicts === 'combine') combineConflicts(groups, options);
   return groups;
 }
@@ -91,7 +94,6 @@ function groupByPrimary(table: Table, options: TransformOptions): Map<string, Ro
 function combineConflicts(groups: Map<string, RowGroup>, options: TransformOptions): void {
   for (const group of groups.values()) {
     if (group.rowCount < 2) continue;
-    group.cells[options.valueColumn] = joinValues(group.values, options.separator);
     for (const [index, values] of group.conflicts) {
       const items = new Set([...values].flatMap((value) => splitCell(value, options.separator)));
       group.cells[index] = joinValues(items, options.separator);

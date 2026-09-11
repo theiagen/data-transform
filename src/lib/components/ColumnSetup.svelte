@@ -203,7 +203,7 @@
     </label>
     {#if duplicates > 0 && options.mergeDuplicates}
       <fieldset class="indent">
-        <legend class="help">Merged rows keep every value listed on any of them. When their other columns disagree:</legend>
+        <legend class="help">Merged rows keep every value listed on any of them, and a kept original column lists them all. When other columns disagree:</legend>
         <div class="radios">
           <label class="radio">
             <input type="radio" name="mergeConflicts" value="first" bind:group={options.mergeConflicts} />
