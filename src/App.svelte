@@ -145,6 +145,11 @@
       Values are split on the separator, trimmed, and de-duplicated within a cell. Every other column is copied through unchanged.
       Large files are fine. There is no upload, no server, and nothing is stored after you close the tab.
     </p>
+    <p class="disclaimer">
+      <strong>Disclaimer.</strong> This tool is provided "as is", without warranty of any kind. It reformats the data you supply,
+      so the results depend on that input and on the settings you choose. Users are responsible for reviewing the output before
+      using it. It must not be the sole basis for clinical, diagnostic, regulatory, or public-health decisions.
+    </p>
     <p class="copyright">
       <img src={theiagenLogo} alt="" width="1026" height="253" />
       <span>Theiagen Genomics © {year}. All Rights Reserved.</span>
@@ -299,6 +304,9 @@
     color: var(--ink-mute);
     font-size: 0.85rem;
     max-width: var(--measure);
+  }
+  .disclaimer {
+    margin-top: 0.75rem;
   }
   .copyright {
     display: flex;
